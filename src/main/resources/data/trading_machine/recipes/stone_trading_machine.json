@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "redstone",
+  "pattern": [
+    "aba",
+    "aca",
+    "aaa"
+  ],
+  "key": {
+    "a": {
+      "tag": "minecraft:stone_tool_materials"
+    },
+    "b": {
+      "item": "minecraft:chest"
+    },
+    "c": {
+      "item": "trading_machine:trading_panel"
+    }
+  },
+  "result": {
+    "item": "trading_machine:stone_trading_machine",
+    "count": 1
+  }
+}

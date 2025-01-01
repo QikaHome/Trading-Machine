@@ -1,0 +1,13 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "trading_machine:block/creative_trading_machine",
+    "up": "trading_machine:block/creative_trading_machine",
+    "north": "trading_machine:block/creative_trading_machine_face",
+    "east": "trading_machine:block/creative_trading_machine",
+    "south": "trading_machine:block/creative_trading_machine",
+    "west": "trading_machine:block/creative_trading_machine",
+    "particle": "trading_machine:block/creative_trading_machine"
+  },
+  "render_type": "solid"
+}

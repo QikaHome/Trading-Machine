@@ -1,0 +1,156 @@
+{
+  "_fv": 73,
+  "_type": "gui",
+  "definition": {
+    "type": 1,
+    "width": 178,
+    "height": 166,
+    "inventoryOffsetX": 0,
+    "inventoryOffsetY": 0,
+    "renderBgLayer": true,
+    "doesPauseGame": false,
+    "components": [
+      {
+        "type": "button",
+        "data": {
+          "name": "button_destory",
+          "text": "Destory",
+          "isUndecorated": false,
+          "onClick": {
+            "name": "TMDestory"
+          },
+          "width": 79,
+          "height": 20,
+          "x": 133,
+          "y": 97,
+          "locked": false
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "name": "button_savenconfig",
+          "text": "Save Config",
+          "isUndecorated": false,
+          "onClick": {
+            "name": "SaveTMConfig"
+          },
+          "width": 79,
+          "height": 20,
+          "x": 216,
+          "y": 97,
+          "locked": false
+        }
+      },
+      {
+        "type": "textfield",
+        "data": {
+          "placeholder": "",
+          "name": "Name",
+          "width": 170,
+          "height": 20,
+          "x": 129,
+          "y": 41,
+          "locked": false
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_input",
+          "text": {
+            "fixedValue": "Input"
+          },
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "x": 133,
+          "y": 64,
+          "locked": false
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_output",
+          "text": {
+            "fixedValue": "Output"
+          },
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "x": 166,
+          "y": 64,
+          "locked": false
+        }
+      },
+      {
+        "type": "inputslot",
+        "data": {
+          "inputLimit": {
+            "value": ""
+          },
+          "disablePlacement": {
+            "fixedValue": false,
+            "name": "SetTradingItem"
+          },
+          "id": 0,
+          "disablePickup": {
+            "fixedValue": false,
+            "name": "RemoveInputItem"
+          },
+          "dropItemsWhenNotBound": true,
+          "x": 133,
+          "y": 77,
+          "locked": false
+        }
+      },
+      {
+        "type": "inputslot",
+        "data": {
+          "inputLimit": {
+            "value": ""
+          },
+          "disablePlacement": {
+            "fixedValue": false,
+            "name": "SetTradingItem"
+          },
+          "id": 1,
+          "disablePickup": {
+            "fixedValue": false,
+            "name": "RemoveOutputItem"
+          },
+          "dropItemsWhenNotBound": true,
+          "x": 166,
+          "y": 77,
+          "locked": false
+        }
+      },
+      {
+        "type": "checkbox",
+        "data": {
+          "name": "UnTradable",
+          "text": "Disable Trade",
+          "isCheckedProcedure": {
+            "name": "UnTradable"
+          },
+          "x": 203,
+          "y": 70,
+          "locked": false
+        }
+      }
+    ],
+    "onOpen": {
+      "name": "SetTMNameBlank"
+    },
+    "gridSettings": {
+      "sx": 18,
+      "sy": 18,
+      "ox": 11,
+      "oy": 15,
+      "snapOnGrid": false
+    }
+  }
+}

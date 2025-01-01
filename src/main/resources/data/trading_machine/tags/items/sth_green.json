@@ -1,0 +1,24 @@
+{
+  "replace": false,
+  "values": [
+    "minecraft:emerald",
+    "minecraft:slime_ball",
+    "minecraft:oak_leaves",
+    "minecraft:spruce_leaves",
+    "minecraft:birch_leaves",
+    "minecraft:jungle_leaves",
+    "minecraft:acacia_leaves",
+    "minecraft:dark_oak_leaves",
+    "minecraft:mangrove_leaves",
+    "minecraft:azalea_leaves",
+    "minecraft:cactus",
+    "minecraft:green_dye",
+    "minecraft:lime_dye",
+    "minecraft:kelp",
+    "minecraft:bamboo",
+    "minecraft:wheat_seeds",
+    "minecraft:sugar_cane",
+    "minecraft:player_head",
+    "minecraft:creeper_head"
+  ]
+}

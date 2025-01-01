@@ -1,0 +1,370 @@
+{
+  "_fv": 73,
+  "_type": "gui",
+  "definition": {
+    "type": 1,
+    "width": 178,
+    "height": 206,
+    "inventoryOffsetX": 0,
+    "inventoryOffsetY": 20,
+    "renderBgLayer": true,
+    "doesPauseGame": false,
+    "components": [
+      {
+        "type": "button",
+        "data": {
+          "name": "button_destory",
+          "text": "Destory",
+          "isUndecorated": false,
+          "onClick": {
+            "name": "TMDestory"
+          },
+          "width": 79,
+          "height": 20,
+          "x": 133,
+          "y": 117,
+          "locked": false
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "name": "button_savenconfig",
+          "text": "Save Config",
+          "isUndecorated": false,
+          "onClick": {
+            "name": "SaveTMConfig"
+          },
+          "width": 79,
+          "height": 20,
+          "x": 216,
+          "y": 117,
+          "locked": false
+        }
+      },
+      {
+        "type": "textfield",
+        "data": {
+          "placeholder": "",
+          "name": "Name",
+          "width": 170,
+          "height": 20,
+          "x": 129,
+          "y": 20,
+          "locked": false
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_input",
+          "text": {
+            "fixedValue": "Input"
+          },
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "x": 131,
+          "y": 79,
+          "locked": false
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_output",
+          "text": {
+            "fixedValue": "Output"
+          },
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "x": 131,
+          "y": 99,
+          "locked": false
+        }
+      },
+      {
+        "type": "inputslot",
+        "data": {
+          "inputLimit": {
+            "value": ""
+          },
+          "disablePlacement": {
+            "fixedValue": false,
+            "name": "SetTradingItem"
+          },
+          "id": 0,
+          "disablePickup": {
+            "fixedValue": false,
+            "name": "RemoveInputItem"
+          },
+          "dropItemsWhenNotBound": true,
+          "x": 188,
+          "y": 78,
+          "locked": false
+        }
+      },
+      {
+        "type": "inputslot",
+        "data": {
+          "inputLimit": {
+            "value": ""
+          },
+          "disablePlacement": {
+            "fixedValue": false,
+            "name": "SetTradingItem"
+          },
+          "id": 1,
+          "disablePickup": {
+            "fixedValue": false,
+            "name": "RemoveOutputItem"
+          },
+          "dropItemsWhenNotBound": true,
+          "x": 188,
+          "y": 96,
+          "locked": false
+        }
+      },
+      {
+        "type": "checkbox",
+        "data": {
+          "name": "UnTradable",
+          "text": "Disable Trade",
+          "isCheckedProcedure": {
+            "name": "UnTradable"
+          },
+          "x": 130,
+          "y": 39,
+          "locked": false
+        }
+      },
+      {
+        "type": "inputslot",
+        "data": {
+          "inputLimit": {
+            "value": ""
+          },
+          "disablePlacement": {
+            "fixedValue": false,
+            "name": "PutItemInTM"
+          },
+          "id": 4,
+          "disablePickup": {
+            "fixedValue": true
+          },
+          "dropItemsWhenNotBound": true,
+          "x": 206,
+          "y": 96,
+          "locked": false
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_remove_from",
+          "text": {
+            "fixedValue": "Remove"
+          },
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "x": 224,
+          "y": 62,
+          "locked": false
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_set",
+          "text": {
+            "fixedValue": "Set"
+          },
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "x": 188,
+          "y": 62,
+          "locked": false
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_put",
+          "text": {
+            "fixedValue": "Put"
+          },
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "x": 206,
+          "y": 62,
+          "locked": false
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "name": "button_out64",
+          "text": "64",
+          "isUndecorated": false,
+          "onClick": {
+            "name": "OutputRemove64"
+          },
+          "width": 19,
+          "height": 20,
+          "x": 235,
+          "y": 95,
+          "locked": false
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "name": "button_outall",
+          "text": "All",
+          "isUndecorated": false,
+          "onClick": {
+            "name": "OutputRemoveAll"
+          },
+          "width": 40,
+          "height": 20,
+          "x": 254,
+          "y": 95,
+          "locked": false
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "name": "button_out1",
+          "text": "1",
+          "isUndecorated": false,
+          "onClick": {
+            "name": "OutputRemove1"
+          },
+          "width": 11,
+          "height": 20,
+          "x": 224,
+          "y": 95,
+          "locked": false
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "name": "button_in1",
+          "text": "1",
+          "isUndecorated": false,
+          "onClick": {
+            "name": "InputRemove1"
+          },
+          "width": 11,
+          "height": 20,
+          "x": 224,
+          "y": 75,
+          "locked": false
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "name": "button_in64",
+          "text": "64",
+          "isUndecorated": false,
+          "onClick": {
+            "name": "InputRemove64"
+          },
+          "width": 19,
+          "height": 20,
+          "x": 235,
+          "y": 75,
+          "locked": false
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "name": "button_inall",
+          "text": "All",
+          "isUndecorated": false,
+          "onClick": {
+            "name": "InputRemoveAll"
+          },
+          "width": 40,
+          "height": 20,
+          "x": 254,
+          "y": 75,
+          "locked": false
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_proc_get_input_count_string",
+          "text": {
+            "fixedValue": "",
+            "name": "GetInputCountString"
+          },
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "x": 165,
+          "y": 79,
+          "locked": false
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_proc_get_output_count_string",
+          "text": {
+            "fixedValue": "",
+            "name": "GetOutputCountString"
+          },
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "x": 165,
+          "y": 99,
+          "locked": false
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_count",
+          "text": {
+            "fixedValue": "Count"
+          },
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "x": 161,
+          "y": 62,
+          "locked": false
+        }
+      }
+    ],
+    "onOpen": {
+      "name": "SetTMNameBlank"
+    },
+    "gridSettings": {
+      "sx": 18,
+      "sy": 18,
+      "ox": 11,
+      "oy": 15,
+      "snapOnGrid": false
+    }
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "replace": false,
+  "values": [
+    "minecraft:red_sand",
+    "minecraft:red_sandstone",
+    "minecraft:red_mushroom",
+    "minecraft:red_dye",
+    "minecraft:redstone",
+    "minecraft:fire_coral_block",
+    "minecraft:fire_coral",
+    "minecraft:fire_coral_fan",
+    "minecraft:weeping_vines",
+    "minecraft:apple",
+    "minecraft:beetroot",
+    "minecraft:spider_eye",
+    "minecraft:fermented_spider_eye",
+    "minecraft:firework_rocket"
+  ]
+}

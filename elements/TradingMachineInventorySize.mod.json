@@ -1,0 +1,12 @@
+{
+  "_fv": 73,
+  "_type": "gamerule",
+  "definition": {
+    "type": "Number",
+    "displayName": "Trading Machine Inventory Size",
+    "description": "This sets how many stacks of item the TM can store.",
+    "category": "UPDATES",
+    "defaultValueLogic": false,
+    "defaultValueNumber": 12
+  }
+}

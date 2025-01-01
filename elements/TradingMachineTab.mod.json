@@ -1,0 +1,11 @@
+{
+  "_fv": 73,
+  "_type": "tab",
+  "definition": {
+    "name": "Trading Machine Tab",
+    "icon": {
+      "value": "CUSTOM:TFCCoin"
+    },
+    "showSearch": false
+  }
+}

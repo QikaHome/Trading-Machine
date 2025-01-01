@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "trading_panel",
+  "category": "redstone",
+  "ingredients": [
+    {
+      "tag": "trading_machine:sth_green"
+    },
+    {
+      "tag": "trading_machine:sth_red"
+    },
+    {
+      "item": "minecraft:glass_pane"
+    },
+    {
+      "item": "minecraft:dropper"
+    }
+  ],
+  "result": {
+    "item": "trading_machine:trading_panel",
+    "count": 1
+  }
+}
