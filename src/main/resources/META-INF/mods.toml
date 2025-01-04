@@ -22,12 +22,6 @@ description="A Method to Trade between Players"
     side="BOTH"
 
 
-[[dependencies.trading_machine]]
-    modId="jei"
-    mandatory=false
-    versionRange="[0,)"
-    ordering="NONE"
-    side="BOTH"
 
 
 # Start of user code block dependencies configuration
