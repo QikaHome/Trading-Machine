@@ -2,6 +2,7 @@
 package tk.qikahome.tradingmachine.item;
 
 import tk.qikahome.tradingmachine.procedures.TFCCardToolTipProcedure;
+import tk.qikahome.tradingmachine.procedures.TFCCardCraftProcedure;
 import tk.qikahome.tradingmachine.procedures.CardThrowProcedure;
 import tk.qikahome.tradingmachine.entity.TFCCoinEntityEntity;
 
@@ -29,7 +30,7 @@ public class TFCCardItem extends Item {
 
 	@Override
 	public UseAnim getUseAnimation(ItemStack itemstack) {
-		return UseAnim.BLOCK;
+		return UseAnim.SPEAR;
 	}
 
 	@Override
@@ -54,7 +55,7 @@ public class TFCCardItem extends Item {
 
 	@Override
 	public int getUseDuration(ItemStack itemstack) {
-		return 2;
+		return 25;
 	}
 
 	@Override
@@ -80,7 +81,13 @@ public class TFCCardItem extends Item {
 	}
 
 	@Override
-	public void onUseTick(Level world, LivingEntity entity, ItemStack itemstack, int count) {
+	public void onCraftedBy(ItemStack itemstack, Level world, Player entity) {
+		super.onCraftedBy(itemstack, world, entity);
+		TFCCardCraftProcedure.execute(entity, itemstack);
+	}
+
+	@Override
+	public void releaseUsing(ItemStack itemstack, Level world, LivingEntity entity, int time) {
 		if (!world.isClientSide() && entity instanceof ServerPlayer player) {
 			ItemStack stack = findAmmo(player);
 			if (player.getAbilities().instabuild || stack != ItemStack.EMPTY) {
@@ -104,7 +111,6 @@ public class TFCCardItem extends Item {
 				}
 				CardThrowProcedure.execute(entity, itemstack);
 			}
-			entity.releaseUsingItem();
 		}
 	}
 

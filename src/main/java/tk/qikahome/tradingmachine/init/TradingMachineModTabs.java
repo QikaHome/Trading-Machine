@@ -21,7 +21,8 @@ public class TradingMachineModTabs {
 				tabData.accept(TradingMachineModItems.TFC_COIN.get());
 				tabData.accept(TradingMachineModItems.TFC_CARD.get());
 				tabData.accept(TradingMachineModItems.TFC_CARD_NOT_REGISTERED.get());
-				tabData.accept(TradingMachineModBlocks.CREATIVE_TRADING_MACHINE.get().asItem());
+				tabData.accept(TradingMachineModItems.TRADING_PANEL.get());
 				tabData.accept(TradingMachineModBlocks.STONE_TRADING_MACHINE.get().asItem());
+				tabData.accept(TradingMachineModBlocks.CREATIVE_TRADING_MACHINE.get().asItem());
 			}).build());
 }

@@ -10,7 +10,7 @@
       "tag": "trading_machine:sth_red"
     },
     {
-      "item": "minecraft:glass_pane"
+      "tag": "forge:glass_panes"
     },
     {
       "item": "minecraft:dropper"

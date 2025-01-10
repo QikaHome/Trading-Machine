@@ -4,7 +4,7 @@
   "definition": {
     "renderType": 0,
     "texture": "tfc_coin",
-    "customModelName": "Ranged item",
+    "customModelName": "Normal",
     "customProperties": {},
     "states": [],
     "name": "TFC Coin",
@@ -16,7 +16,7 @@
     ],
     "stackSize": 64,
     "enchantability": 0,
-    "useDuration": 65535,
+    "useDuration": 1,
     "toolType": 1.0,
     "damageCount": 0,
     "recipeRemainder": {
@@ -38,7 +38,10 @@
     },
     "inventorySize": 9,
     "inventoryStackSize": 64,
-    "enableRanged": true,
+    "onRightClickedInAir": {
+      "name": "TFCCoinAddToCard"
+    },
+    "enableRanged": false,
     "shootConstantly": false,
     "rangedItemChargesPower": true,
     "projectile": {
@@ -56,7 +59,7 @@
     },
     "isMeat": false,
     "isAlwaysEdible": false,
-    "animation": "spear",
+    "animation": "none",
     "isMusicDisc": false,
     "musicDiscMusic": {
       "value": ""

@@ -21,8 +21,14 @@ public class TMTickProcedure {
 		double LTOC = 0;
 		boolean InputEnough = false;
 		boolean LTTNF = false;
+		CheckAndDestoryProcedure.execute(world, x + 1, y, z);
+		CheckAndDestoryProcedure.execute(world, x - 1, y, z);
+		CheckAndDestoryProcedure.execute(world, x, y + 1, z);
+		CheckAndDestoryProcedure.execute(world, x, y - 1, z);
+		CheckAndDestoryProcedure.execute(world, x, y, z + 1);
+		CheckAndDestoryProcedure.execute(world, x, y, z - 1);
 		if (!UnTradableProcedure.execute(world, x, y, z)) {
-			InputEnough = (new Object() {
+			InputEnough = TheseTwoItemsAreTheSameProcedure.execute(new Object() {
 				public ItemStack getItemStack(LevelAccessor world, BlockPos pos, int slotid) {
 					AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
 					BlockEntity _ent = world.getBlockEntity(pos);
@@ -30,7 +36,7 @@ public class TMTickProcedure {
 						_ent.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> _retval.set(capability.getStackInSlot(slotid).copy()));
 					return _retval.get();
 				}
-			}.getItemStack(world, BlockPos.containing(x, y, z), 0)).getItem() == (new Object() {
+			}.getItemStack(world, BlockPos.containing(x, y, z), 0), new Object() {
 				public ItemStack getItemStack(LevelAccessor world, BlockPos pos, int slotid) {
 					AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
 					BlockEntity _ent = world.getBlockEntity(pos);
@@ -38,7 +44,7 @@ public class TMTickProcedure {
 						_ent.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> _retval.set(capability.getStackInSlot(slotid).copy()));
 					return _retval.get();
 				}
-			}.getItemStack(world, BlockPos.containing(x, y, z), 2)).getItem() && new Object() {
+			}.getItemStack(world, BlockPos.containing(x, y, z), 2)) && new Object() {
 				public int getAmount(LevelAccessor world, BlockPos pos, int slotid) {
 					AtomicInteger _retval = new AtomicInteger(0);
 					BlockEntity _ent = world.getBlockEntity(pos);
@@ -71,7 +77,7 @@ public class TMTickProcedure {
 					return false;
 				}
 			}.getValue(world, BlockPos.containing(x, y, z), "lastTimeTradeNotFinish");
-			if (LTOC == new Object() {
+			if (LTOC >= new Object() {
 				public int getAmount(LevelAccessor world, BlockPos pos, int slotid) {
 					AtomicInteger _retval = new AtomicInteger(0);
 					BlockEntity _ent = world.getBlockEntity(pos);
@@ -95,7 +101,23 @@ public class TMTickProcedure {
 						_ent.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> _retval.set(capability.getStackInSlot(slotid).getCount()));
 					return _retval.get();
 				}
-			}.getAmount(world, BlockPos.containing(x, y, z), 3) && !LTTNF && LTOC != 0) {
+			}.getAmount(world, BlockPos.containing(x, y, z), 3) && !LTTNF && LTOC != 0 && TheseTwoItemsAreTheSameProcedure.execute(new Object() {
+				public ItemStack getItemStack(LevelAccessor world, BlockPos pos, int slotid) {
+					AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
+					BlockEntity _ent = world.getBlockEntity(pos);
+					if (_ent != null)
+						_ent.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> _retval.set(capability.getStackInSlot(slotid).copy()));
+					return _retval.get();
+				}
+			}.getItemStack(world, BlockPos.containing(x, y, z), 0), new Object() {
+				public ItemStack getItemStack(LevelAccessor world, BlockPos pos, int slotid) {
+					AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
+					BlockEntity _ent = world.getBlockEntity(pos);
+					if (_ent != null)
+						_ent.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> _retval.set(capability.getStackInSlot(slotid).copy()));
+					return _retval.get();
+				}
+			}.getItemStack(world, BlockPos.containing(x, y, z), 2))) {
 				LTTNF = true;
 				{
 					BlockEntity _ent = world.getBlockEntity(BlockPos.containing(x, y, z));
@@ -333,6 +355,16 @@ public class TMTickProcedure {
 				BlockState _bs = world.getBlockState(_bp);
 				if (_blockEntity != null)
 					_blockEntity.getPersistentData().putBoolean("lastTimeTradeNotFinish", LTTNF);
+				if (world instanceof Level _level)
+					_level.sendBlockUpdated(_bp, _bs, _bs, 3);
+			}
+		} else {
+			if (!world.isClientSide()) {
+				BlockPos _bp = BlockPos.containing(x, y, z);
+				BlockEntity _blockEntity = world.getBlockEntity(_bp);
+				BlockState _bs = world.getBlockState(_bp);
+				if (_blockEntity != null)
+					_blockEntity.getPersistentData().putBoolean("lastTimeTradeNotFinish", true);
 				if (world instanceof Level _level)
 					_level.sendBlockUpdated(_bp, _bs, _bs, 3);
 			}

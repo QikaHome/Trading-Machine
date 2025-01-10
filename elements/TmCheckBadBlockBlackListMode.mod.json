@@ -1,0 +1,12 @@
+{
+  "_fv": 73,
+  "_type": "gamerule",
+  "definition": {
+    "type": "Logic",
+    "displayName": "Trading Machine Check Bad Blocks Using Black List",
+    "description": "It sets whether the check around the Trading Machine(x+1-1, y+1-1, z+1-1) use Black List(a tag named trading_machine:black_list)",
+    "category": "PLAYER",
+    "defaultValueLogic": false,
+    "defaultValueNumber": 0
+  }
+}

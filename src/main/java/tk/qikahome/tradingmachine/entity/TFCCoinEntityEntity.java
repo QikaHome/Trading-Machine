@@ -2,6 +2,7 @@
 package tk.qikahome.tradingmachine.entity;
 
 import tk.qikahome.tradingmachine.procedures.TFCDropProcedure;
+import tk.qikahome.tradingmachine.procedures.TFCCoinHitEntityProcedure;
 import tk.qikahome.tradingmachine.init.TradingMachineModItems;
 import tk.qikahome.tradingmachine.init.TradingMachineModEntities;
 
@@ -11,6 +12,7 @@ import net.minecraftforge.network.NetworkHooks;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.api.distmarker.Dist;
 
+import net.minecraft.world.phys.EntityHitResult;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.item.ItemStack;
@@ -67,6 +69,12 @@ public class TFCCoinEntityEntity extends AbstractArrow implements ItemSupplier {
 	}
 
 	@Override
+	public void onHitEntity(EntityHitResult entityHitResult) {
+		super.onHitEntity(entityHitResult);
+		TFCCoinHitEntityProcedure.execute(this.level(), entityHitResult.getEntity(), this, this.getOwner());
+	}
+
+	@Override
 	public void onHitBlock(BlockHitResult blockHitResult) {
 		super.onHitBlock(blockHitResult);
 		TFCDropProcedure.execute(this.level(), blockHitResult.getBlockPos().getX(), blockHitResult.getBlockPos().getY(), blockHitResult.getBlockPos().getZ());
@@ -80,11 +88,11 @@ public class TFCCoinEntityEntity extends AbstractArrow implements ItemSupplier {
 	}
 
 	public static TFCCoinEntityEntity shoot(Level world, LivingEntity entity, RandomSource source) {
-		return shoot(world, entity, source, 1f, 6, 0);
+		return shoot(world, entity, source, 1f, 0, 0);
 	}
 
 	public static TFCCoinEntityEntity shoot(Level world, LivingEntity entity, RandomSource source, float pullingPower) {
-		return shoot(world, entity, source, pullingPower * 1f, 6, 0);
+		return shoot(world, entity, source, pullingPower * 1f, 0, 0);
 	}
 
 	public static TFCCoinEntityEntity shoot(Level world, LivingEntity entity, RandomSource random, float power, double damage, int knockback) {
@@ -106,7 +114,7 @@ public class TFCCoinEntityEntity extends AbstractArrow implements ItemSupplier {
 		double dz = target.getZ() - entity.getZ();
 		entityarrow.shoot(dx, dy - entityarrow.getY() + Math.hypot(dx, dz) * 0.2F, dz, 1f * 2, 12.0F);
 		entityarrow.setSilent(true);
-		entityarrow.setBaseDamage(6);
+		entityarrow.setBaseDamage(0);
 		entityarrow.setKnockback(0);
 		entityarrow.setCritArrow(false);
 		entity.level().addFreshEntity(entityarrow);

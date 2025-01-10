@@ -1,0 +1,23 @@
+{
+  "display": {
+    "icon": {
+      "item": "trading_machine:tfc_coin"
+    },
+    "title": {
+      "translate": "advancements.throw_coin.title"
+    },
+    "description": {
+      "translate": "advancements.throw_coin.descr"
+    },
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "throw_coin_0": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "parent": "minecraft:adventure/trade"
+}

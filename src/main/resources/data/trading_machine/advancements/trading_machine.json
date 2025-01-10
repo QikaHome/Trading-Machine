@@ -1,0 +1,36 @@
+{
+  "display": {
+    "icon": {
+      "item": "trading_machine:stone_trading_machine"
+    },
+    "title": {
+      "translate": "advancements.trading_machine.title"
+    },
+    "description": {
+      "translate": "advancements.trading_machine.descr"
+    },
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "trading_machine_0": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "trading_machine:stone_trading_machine"
+            ],
+            "count": {
+              "min": 1,
+              "max": 10000000
+            }
+          }
+        ]
+      }
+    }
+  },
+  "parent": "minecraft:adventure/trade"
+}

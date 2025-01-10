@@ -60,7 +60,23 @@ public class UnTradableProcedure {
 						return _retval.get();
 					}
 				}.getItemStack(world, BlockPos.containing(x, y, z), 0)).getMaxStackSize() * (world.getLevelData().getGameRules().getInt(TradingMachineModGameRules.TRADING_MACHINE_INVENTORY_SIZE)))
-						&& !(TradingMachineModBlocks.CREATIVE_TRADING_MACHINE.get() == (world.getBlockState(BlockPos.containing(x, y, z))).getBlock())));
+						&& !(TradingMachineModBlocks.CREATIVE_TRADING_MACHINE.get() == (world.getBlockState(BlockPos.containing(x, y, z))).getBlock()) || 0 == new Object() {
+							public int getAmount(LevelAccessor world, BlockPos pos, int slotid) {
+								AtomicInteger _retval = new AtomicInteger(0);
+								BlockEntity _ent = world.getBlockEntity(pos);
+								if (_ent != null)
+									_ent.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> _retval.set(capability.getStackInSlot(slotid).getCount()));
+								return _retval.get();
+							}
+						}.getAmount(world, BlockPos.containing(x, y, z), 0) || 0 == new Object() {
+							public int getAmount(LevelAccessor world, BlockPos pos, int slotid) {
+								AtomicInteger _retval = new AtomicInteger(0);
+								BlockEntity _ent = world.getBlockEntity(pos);
+								if (_ent != null)
+									_ent.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> _retval.set(capability.getStackInSlot(slotid).getCount()));
+								return _retval.get();
+							}
+						}.getAmount(world, BlockPos.containing(x, y, z), 1)));
 			if (world instanceof Level _level)
 				_level.sendBlockUpdated(_bp, _bs, _bs, 3);
 		}

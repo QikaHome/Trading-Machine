@@ -69,7 +69,7 @@ public class TFCCardRegisterButtonMessage {
 		}
 		if (buttonID == 1) {
 
-			OpenCardTFCCardProcedure.execute(world, entity, guistate);
+			OpenCardTFCCardProcedure.execute(entity, guistate);
 		}
 	}
 

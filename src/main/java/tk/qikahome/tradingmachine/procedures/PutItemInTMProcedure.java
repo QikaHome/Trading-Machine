@@ -16,7 +16,7 @@ import java.util.concurrent.atomic.AtomicReference;
 public class PutItemInTMProcedure {
 	public static boolean execute(LevelAccessor world, double x, double y, double z, ItemStack itemstack) {
 		double MaxN = 0;
-		if (itemstack.getItem() == (new Object() {
+		if (TheseTwoItemsAreTheSameProcedure.execute(itemstack, new Object() {
 			public ItemStack getItemStack(LevelAccessor world, BlockPos pos, int slotid) {
 				AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
 				BlockEntity _ent = world.getBlockEntity(pos);
@@ -24,7 +24,7 @@ public class PutItemInTMProcedure {
 					_ent.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> _retval.set(capability.getStackInSlot(slotid).copy()));
 				return _retval.get();
 			}
-		}.getItemStack(world, BlockPos.containing(x, y, z), 1)).getItem()) {
+		}.getItemStack(world, BlockPos.containing(x, y, z), 1))) {
 			MaxN = Math.min(itemstack.getMaxStackSize() * (world.getLevelData().getGameRules().getInt(TradingMachineModGameRules.TRADING_MACHINE_INVENTORY_SIZE)) - (new Object() {
 				public double getValue(LevelAccessor world, BlockPos pos, String tag) {
 					BlockEntity blockEntity = world.getBlockEntity(pos);

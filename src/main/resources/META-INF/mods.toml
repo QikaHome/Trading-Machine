@@ -4,9 +4,10 @@ license="MIT License"
 
 [[mods]]
 modId="trading_machine"
-version="0.1.0"
+version="0.2.0"
 displayName="Trading Machine"
 displayURL="https://mcreator.net"
+logoFile="logo.png"
 credits="Created using mod maker MCreator - https://mcreator.net/about"
 authors="Qikahome, MCreator"
 description="A Method to Trade between Players"
@@ -22,6 +23,12 @@ description="A Method to Trade between Players"
     side="BOTH"
 
 
+[[dependencies.trading_machine]]
+    modId="jei"
+    mandatory=false
+    versionRange="[0,)"
+    ordering="NONE"
+    side="BOTH"
 
 
 # Start of user code block dependencies configuration
